@@ -383,7 +383,6 @@ export default function CreateListing() {
         </div>
       </form>
     </main>
-    <Footer/>
     </>
   );
 }

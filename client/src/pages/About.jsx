@@ -22,7 +22,6 @@ export default function About() {
           Find, choose, and start living your best campus life with HostelHunt!
         </p>
       </div>
-      <Footer />
     </>
   );
 }
