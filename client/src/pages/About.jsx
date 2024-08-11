@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function About() {
   return (
-    <div className='py-20 px-4 max-w-6xl mx-auto mt-20'>
+    <div className='py-20 px-4 max-w-6xl mx-auto mt-20 mb-40'>
       <h1 className='text-3xl font-bold mb-4 text-slate-800'>About HostelHunt</h1>
       <p className='mb-4 text-slate-700'>HostelHunt is your ultimate companion in navigating the sometimes overwhelming process of selecting the perfect college hostel.</p>
       <p className='mb-4 text-slate-700'>
