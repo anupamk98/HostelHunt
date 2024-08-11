@@ -10,39 +10,35 @@ const listingSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    address: {
+    wing: {
       type: String,
       required: true,
     },
-    regularPrice: {
+    Price: {
       type: Number,
       required: true,
     },
-    discountPrice: {
+    seater: {
       type: Number,
       required: true,
     },
-    bathrooms: {
+    room: {
       type: Number,
       required: true,
     },
-    bedrooms: {
-      type: Number,
-      required: true,
-    },
-    furnished: {
+    filter: {
       type: Boolean,
       required: true,
     },
-    parking: {
+    balcony: {
       type: Boolean,
       required: true,
     },
-    type: {
+    year: {
       type: String,
       required: true,
     },
-    offer: {
+    bathroom: {
       type: Boolean,
       required: true,
     },

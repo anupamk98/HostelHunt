@@ -23,7 +23,7 @@ export default function Header() {
     }
   }, [location.search]);
   return (
-    <header style={{backgroundColor:'#116633',position:'fixed',top:'0',left:'0',width:'100vw'}}>
+    <header style={{backgroundColor:'#116633',top:'0',left:'0',width:'100%'}}>
       <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
         <Link to='/'>
           <h1 className='font-bold text-sm sm:text-xl flex flex-wrap'>

@@ -15,7 +15,7 @@ export default function Home() {
   useEffect(() => {
     const fetchOfferListings = async () => {
       try {
-        const res = await fetch('/api/listing/get?offer=true&limit=4');
+        const res = await fetch('/api/listing/get?year=3rd&limit=4');
         const data = await res.json();
         setOfferListings(data);
         fetchRentListings();
@@ -25,7 +25,7 @@ export default function Home() {
     };
     const fetchRentListings = async () => {
       try {
-        const res = await fetch('/api/listing/get?type=rent&limit=4');
+        const res = await fetch('/api/listing/get?year=4th&limit=4');
         const data = await res.json();
         setRentListings(data);
         fetchSaleListings();
@@ -36,7 +36,7 @@ export default function Home() {
 
     const fetchSaleListings = async () => {
       try {
-        const res = await fetch('/api/listing/get?type=sale&limit=4');
+        const res = await fetch('/api/listing/get?year=4th&limit=4');
         const data = await res.json();
         setSaleListings(data);
       } catch (error) {
@@ -84,6 +84,20 @@ export default function Home() {
               ></div>
             </SwiperSlide>
           ))}
+          {rentListings &&
+          rentListings.length > 0 &&
+          rentListings.map((listing) => (
+            <SwiperSlide>
+              <div
+                style={{
+                  background: `url(${listing.imageUrls[0]}) center no-repeat`,
+                  backgroundSize: 'cover',
+                }}
+                className='h-[500px]'
+                key={listing._id}
+              ></div>
+            </SwiperSlide>
+          ))}
       </Swiper>
 
       {/* listing results for offer, sale and rent */}
@@ -92,7 +106,7 @@ export default function Home() {
         {offerListings && offerListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent offers</h2>
+              <h2 className='text-2xl font-semibold text-slate-600'>Recent offers for Third Years</h2>
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?offer=true'}>Show more offers</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
@@ -105,24 +119,11 @@ export default function Home() {
         {rentListings && rentListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent places for rent</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>Show more places for rent</Link>
+              <h2 className='text-2xl font-semibold text-slate-600'>Recent offers for Fourth Year</h2>
+              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>Show more offers</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
               {rentListings.map((listing) => (
-                <ListingItem listing={listing} key={listing._id} />
-              ))}
-            </div>
-          </div>
-        )}
-        {saleListings && saleListings.length > 0 && (
-          <div className=''>
-            <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent places for sale</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sale'}>Show more places for sale</Link>
-            </div>
-            <div className='flex flex-wrap gap-4'>
-              {saleListings.map((listing) => (
                 <ListingItem listing={listing} key={listing._id} />
               ))}
             </div>

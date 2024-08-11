@@ -66,28 +66,28 @@ export const getListings = async (req, res, next) => {
   try {
     const limit = parseInt(req.query.limit) || 9;
     const startIndex = parseInt(req.query.startIndex) || 0;
-    let offer = req.query.offer;
+    let bathroom = req.query.bathroom;
 
-    if (offer === undefined || offer === 'false') {
-      offer = { $in: [false, true] };
+    if (bathroom === undefined || bathroom === 'false') {
+      bathroom = { $in: [false, true] };
     }
 
-    let furnished = req.query.furnished;
+    let filter = req.query.filter;
 
-    if (furnished === undefined || furnished === 'false') {
-      furnished = { $in: [false, true] };
+    if (filter === undefined || filter === 'false') {
+      filter = { $in: [false, true] };
     }
 
-    let parking = req.query.parking;
+    let balcony = req.query.balcony;
 
-    if (parking === undefined || parking === 'false') {
-      parking = { $in: [false, true] };
+    if (balcony === undefined || balcony === 'false') {
+      balcony = { $in: [false, true] };
     }
 
-    let type = req.query.type;
+    let year = req.query.year;
 
-    if (type === undefined || type === 'all') {
-      type = { $in: ['sale', 'rent'] };
+    if (year === undefined || year === 'all') {
+      year = { $in: ['3rd', '4th'] };
     }
 
     const searchTerm = req.query.searchTerm || '';
@@ -98,10 +98,10 @@ export const getListings = async (req, res, next) => {
 
     const listings = await Listing.find({
       name: { $regex: searchTerm, $options: 'i' },
-      offer,
-      furnished,
-      parking,
-      type,
+      bathroom,
+      filter,
+      balcony,
+      year,
     })
       .sort({ [sort]: order })
       .limit(limit)
