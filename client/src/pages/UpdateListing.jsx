@@ -8,7 +8,7 @@ import {
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-
+import Footer from '../components/Footer';
 export default function CreateListing() {
   const { currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
@@ -170,6 +170,7 @@ export default function CreateListing() {
     }
   };
   return (
+    <>
     <main className='p-3 max-w-4xl mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>
         Update a Listing
@@ -382,5 +383,7 @@ export default function CreateListing() {
         </div>
       </form>
     </main>
+    <Footer/>
+    </>
   );
 }

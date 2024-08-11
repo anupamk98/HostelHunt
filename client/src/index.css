@@ -10,5 +10,6 @@ body{
      background: #c2e59c;  
 background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);  
 background: linear-gradient(to right, #64b3f4, #c2e59c); 
-
+padding: 0;
+margin:0;
 }
