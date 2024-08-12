@@ -5,12 +5,13 @@ import { initializeApp } from 'firebase/app';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: 'mern-estate.firebaseapp.com',
-  projectId: 'mern-estate',
-  storageBucket: 'mern-estate.appspot.com',
-  messagingSenderId: '1078482850952',
-  appId: '1:1078482850952:web:28f19139ab77246602fb3d',
+  apiKey: "AIzaSyDUwrm9FOlmrz4-Z3qmk4s0FPqri4sPYYE",
+  authDomain: "hostelhunt-7c509.firebaseapp.com",
+  projectId: "hostelhunt-7c509",
+  storageBucket: "hostelhunt-7c509.appspot.com",
+  messagingSenderId: "113611336163",
+  appId: "1:113611336163:web:af167efc3f65d3946698d6",
+  measurementId: "G-ZNL9E9J5P4"
 };
 
 // Initialize Firebase

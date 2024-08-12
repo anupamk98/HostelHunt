@@ -2,7 +2,7 @@ import { FaFacebookMessenger, FaGithub, FaMailBulk, FaVoicemail } from "react-ic
 
 export default function Footer(){
     return (
-      <div className="bg-[#116633] fixed bottom-0 w-[100%]">
+      <div className="bg-[#116633] fixed bottom-0 w-[100%] z-10">
         <nav className="flex justify-between gap-10  items-center py-4 px-3 max-w-6xl  mx-auto">
           <div className="flex flex-col gap-1">
             <div>

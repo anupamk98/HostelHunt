@@ -69,7 +69,8 @@ export default function Home() {
       </div>
 
       {/* swiper */}
-      <Swiper navigation>
+      <div className='text-3xl mx-auto max-w-6xl py-5 px-3 font-bold '>Images of Recent Offers</div>
+      <Swiper navigation className='mx-auto max-w-6xl rounded-xl border-solid border-2 border-black'>
         {offerListings &&
           offerListings.length > 0 &&
           offerListings.map((listing) => (
