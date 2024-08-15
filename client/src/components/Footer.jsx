@@ -14,7 +14,7 @@ export default function Footer(){
               </span>
             </div>
               <div className="text-md font-bold text-white">
-                ©2024 HostelHunt - By Anupam, Arindom and Tanbir
+                By Anupam, Arindom and Tanbir.
                 All rights Reserved.
             </div>
           </div>
